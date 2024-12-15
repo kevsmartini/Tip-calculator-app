@@ -1,0 +1,318 @@
+/*
+    CSS Reset
+  */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Space Mono", monospace;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+Colors
+  */
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+.tip-calculator-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--Light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title p{
+  font-size: 1.5rem;
+  color: var(--Very-dark-cyan);
+  font-weight: 600;
+  letter-spacing: .6rem;
+}
+
+.container {
+  display: flex;
+  background-color: var(--White);
+  max-width: 800px;
+  width: 100%;  
+  gap: 2rem;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/*
+Input Container
+*/
+
+.tip-input-container {
+  flex: 1;
+  display: grid;
+  gap: 2rem;
+}
+
+.bill-amount {
+  display: grid;
+  position: relative;
+}
+
+.bill-amount input,
+.people-number-input input{
+  border: none;
+  height: 45px;
+  background-color: rgba(192, 190, 190, 0.267);
+  color: var(--Very-dark-cyan);
+  border-radius: .5rem;
+  text-align: right;
+  padding: 0.7rem;
+  width: 100%;
+  font-size: 1.5rem;
+  outline:none;
+}
+
+.bill-amount label,
+.people-number-input label,
+.tip-percentage-buttons p {
+
+
+ color: var(--Dark-grayish-cyan);
+ font-size: .9rem;
+ font-weight: 600;
+ margin-bottom:.4rem;
+ ;
+}
+
+
+.bill-amount input::placeholder,
+.people-number-input input::placeholder{
+  color: var(--Grayish-cyan);
+}
+
+.input-left-symbol  {
+  position: absolute;
+  top: 60%;
+  right: 93%;
+  color: var(--Grayish-cyan);
+}
+
+.tip-and-total-container {
+  flex: 1;
+}
+
+/*
+
+*/
+.tip-buttons-container{
+display: grid;
+gap: .6rem;
+grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+.tip-buttons-container button{
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    padding: .6rem;
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+}
+
+.tip-buttons-container button:hover,
+.reset-button:hover{
+background-color: hsl(172, 85%, 80%);
+color: var(--Very-dark-cyan);
+
+
+}
+
+.tip-buttons-container input{
+    text-align: right;
+    font-size: 1.5rem;
+    padding-right: .7rem;
+
+    border: none;
+    background-color: rgba(192, 190, 190, 0.267);
+    outline-color: var(--Strong-cyan);
+    border-radius:.5rem ;
+
+}
+
+.tip-buttons-container input::placeholder{
+    color: var(--Light-grayish-cyan);
+    font-weight: 600;
+
+    text-align: center;
+
+}
+
+.people-number-input{
+    display: grid;
+    position: relative;
+    
+
+}
+
+#people-number[type="number"]::-webkit-inner-spin-button,
+#people-number[type="number"]::-webkit-outer-spin-button, 
+#bill[type="number"]::-webkit-inner-spin-button,
+#bill[type="number"]::-webkit-outer-spin-button,
+.custom-tip[type="number"]::-webkit-inner-spin-button,
+.custom-tip[type="number"]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  
+}
+
+.people-input-labels{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-warning{
+  color: rgb(224, 69, 8);
+  display: none;
+
+}
+
+/*
+Tip total container
+*/
+
+.tip-and-total-container{
+background-color: var(--Very-dark-cyan);
+border-radius: .8rem;
+display: grid;
+color: white;
+padding: 2rem;
+}
+
+.tip-amount,
+.tip-total{
+display: flex;
+justify-content: space-between;
+}
+
+.tip-amount p,
+.tip-total p{
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+.tip-amount span,
+.tip-total span{
+    color: var(--Light-grayish-cyan);
+    font-size: .6rem;
+}
+
+
+.reset-button{
+    height: 45px;
+    border-radius: .4rem;
+    color: rgba(38, 77, 87, 0.685);
+    background-color: hsl(182, 35%, 30%);
+    font-weight: 600;
+    align-self: self-end;
+    cursor: pointer;
+    border: none;
+}
+
+p.tip-number,
+p.total-number{
+font-size: 2.5rem;
+color: var(--Strong-cyan);
+}
+
+
+/*
+Media query
+*/
+
+@media (width < 900px) {
+
+  .tip-calculator-container {
+   gap: 1rem;
+  }
+  .container{
+    flex-direction: column;
+  
+  }
+
+  
+}
+
+@media (width<600px) {
+  .container{
+padding: 1rem; 
+border-bottom-left-radius:0 ; 
+border-bottom-right-radius:0 ; 
+  }
+  .tip-buttons-container {
+    grid-template-columns: repeat(2, minmax(120px, 1fr)); /* Cambiar a 2 columnas */
+  }
+}
+
