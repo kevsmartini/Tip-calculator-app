@@ -9,9 +9,9 @@ const resetBtn = document.querySelector(".reset-button");
 
 const tipcalculator = (bill, tip, people) => {
   percentageOfBill = bill * (tip / 100);
-  tipNumber.textContent = Math.round((percentageOfBill / people) * 100) / 100;
+  tipNumber.textContent = '$'+Math.round((percentageOfBill / people) * 100) / 100;
   totalPersonNumber.textContent =
-    Math.round(((bill + percentageOfBill) / people) * 100) / 100;
+    '$'+Math.round(((bill + percentageOfBill) / people) * 100) / 100;
 };
 
 percentageBtn.forEach((btn) => {
